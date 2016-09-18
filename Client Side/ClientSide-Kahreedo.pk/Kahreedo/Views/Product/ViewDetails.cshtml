@@ -1,0 +1,231 @@
+﻿@model Khareedo.Models.Product
+
+@{
+    ViewBag.Title = "View Details";
+}
+<link href="~/Content/css/style.css" rel="stylesheet" />
+<!-- product category -->
+<section id="aa-product-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="aa-product-details-area">
+                    <div class="aa-product-details-content">
+                        <div class="row">
+                            <!-- Modal view slider -->
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <div class="aa-product-view-slider">
+                                    <div id="demo-1" class="simpleLens-gallery-container">
+                                        <div class="simpleLens-container">
+                                            <div class="simpleLens-big-image-container"><a data-lens-image="@Model.ImageURL" class="simpleLens-lens-image"><img src="@Model.ImageURL" class="simpleLens-big-image"></a></div>
+                                        </div>
+                                        @*<div class="simpleLens-thumbnails-container">
+                                            <a data-big-image="../../Content/img/view-slider/medium/polo-shirt-1.png" data-lens-image="../../Content/img/view-slider/large/polo-shirt-1.png" class="simpleLens-thumbnail-wrapper" href="#">
+                                                <img src="../../Content/img/view-slider/thumbnail/polo-shirt-1.png">
+                                            </a>
+                                            <a data-big-image="../../Content/img/view-slider/medium/polo-shirt-3.png" data-lens-image="../../Content/img/view-slider/large/polo-shirt-3.png" class="simpleLens-thumbnail-wrapper" href="#">
+                                                <img src="../../Content/img/view-slider/thumbnail/polo-shirt-3.png">
+                                            </a>
+                                            <a data-big-image="../../Content/img/view-slider/medium/polo-shirt-4.png" data-lens-image="../../Content/img/view-slider/large/polo-shirt-4.png" class="simpleLens-thumbnail-wrapper" href="#">
+                                                <img src="../../Content/img/view-slider/thumbnail/polo-shirt-4.png">
+                                            </a>
+                                            
+                                        </div>*@
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal view content -->
+                            <div class="col-md-7 col-sm-7 col-xs-12">
+                                <div class="aa-product-view-content">
+                                    <h3><strong> @Model.Name</strong></h3>
+                                    <div class="aa-product-rating">
+                                        @for (int i = 1; i <= 5; i++)
+                                        {
+                                            if (ViewBag.AvgRate >= i)
+                                            {
+                                                <span class="fa fa-star" style="color: #ff6600"></span>
+                                            }
+                                            else
+                                            {
+                                                <span class="fa fa-star-o" style="color: #ff6600"></span>
+                                            }
+                                        }
+
+                                    </div>
+
+                                    <div class="aa-price-block">
+                                        <span class="aa-product-view-price">Rs. <b> @Model.UnitPrice</b></span>
+                                        @if (Model.UnitInStock > 0)
+                                        {
+                                            <p class="aa-product-avilability"><span style="color:white ;background-color:green">In Stock (@Model.UnitInStock)</span></p>
+                                        }
+                                        else
+                                        {
+                                            <p class="aa-product-avilability"><span style="color:white;background-color:red">Out of Stock</span></p>
+                                        }
+                                        @{
+                                            TempData["returnURL"] = Request.RawUrl;   
+                                        }
+                                        
+                                       
+                                    </div>
+                                    <p>@Model.ShortDescription</p>
+                                    @*<h4>Size</h4>
+                                    <div class="aa-prod-view-size">
+                                        <a href="#">S</a>
+                                        <a href="#">M</a>
+                                        <a href="#">L</a>
+                                        <a href="#">XL</a>
+                                    </div>
+                                    <h4>Color</h4>
+                                    <div class="aa-color-tag">
+                                        <a href="#" class="aa-color-green"></a>
+                                        <a href="#" class="aa-color-yellow"></a>
+                                        <a href="#" class="aa-color-pink"></a>
+                                        <a href="#" class="aa-color-black"></a>
+                                        <a href="#" class="aa-color-white"></a>
+                                    </div>*@
+                                    <div class="aa-prod-quantity">
+                                        <h4>Quantity:</h4>
+                                        <form action="">
+                                            <input type="number" name="quantity" min="1" max="99" maxlength="2" value="1" />                                            
+                                        </form>                                       
+                                    </div>
+                                    <div class="aa-prod-view-bottom">
+                                        @if (Model.UnitInStock > 0)
+                                        {
+                                             <a class="aa-add-to-cart-btn" href="@(Session["username"] != null ? Url.Action("AddToCart", "Product", new { id=Model.ProductID}) : Url.Action("Login", "Account"))">Add To Cart</a>
+                                        }
+                                        else
+                                        {
+                                            <a class="aa-add-to-cart-btn" ))">Add To Cart</a>
+
+                                        }
+                                            <a class="aa-add-to-cart-btn" href="@(Session["username"] != null ? Url.Action("WishList", "Product", new { id = Model.ProductID }) : Url.Action("Login", "Account"))">Wishlist</a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aa-product-details-bottom">
+                        <ul class="nav nav-tabs" id="myTab2">
+                            <li><a href="#description" data-toggle="tab">Description</a></li>
+                            <li><a href="#review" data-toggle="tab">Reviews</a></li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="description">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                <ul>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, culpa!</li>
+                                    <li>Lorem ipsum dolor sit amet.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor qui eius esse!</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, modi!</li>
+                                </ul>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, iusto earum voluptates autem esse molestiae ipsam, atque quam amet similique ducimus aliquid voluptate perferendis, distinctio!</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ea, voluptas! Aliquam facere quas cumque rerum dolore impedit, dicta ducimus repellat dignissimos, fugiat, minima quaerat necessitatibus? Optio adipisci ab, obcaecati, porro unde accusantium facilis repudiandae.</p>
+                            </div>
+                            <div class="tab-pane fade " id="review">
+                                <div class="aa-product-review-area">
+                                    <h4><b>@ViewBag.TotalReviews</b> Reviews for @Model.Name</h4>
+                                    <ul class="aa-review-nav">
+                                        @if (ViewBag.Reviews!=null)
+	                                    {
+                                            foreach (var item in ViewBag.Reviews)
+	                                            { 
+                                                     <li>
+                                                        <div class="media">
+                                                            <div class="media-left">
+                                                                <a href="#">
+                                                                    <img class="media-object" src="/Content/img/testimonial-img-3.jpg" alt="girl image">
+                                                                </a>
+                                                            </div>
+                                                            <div class="media-body">
+                                                                <h4 class="media-heading"><strong>@item.Name</strong> - <span>@item.DateTime</span></h4>
+                                                                <div class="aa-product-rating">
+                                                                    @for (int i = 1; i <= 5; i++)
+                                                                    {
+                                                                        if(@item.Rate>=i)
+                                                                        {
+                                                                            <span class="fa fa-star"></span>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <span class="fa fa-star-o"></span>
+                                                                        }
+                                                                    }
+                                                                    
+                                                                </div>
+                                                                <p>@item.Review1</p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                }
+                                        }
+                                        
+                                    </ul>
+                                    <h4>Add a review</h4>
+                                    @if(Session["username"]!=null)
+                                    { 
+                                        using (Html.BeginForm("AddReview", "Product", new { productID = @Model.ProductID }, FormMethod.Post, new { @class = "aa-review-form" }))
+                                        {
+                                        <div class="aa-your-rating">
+                                            <p>Your Rating</p>
+                                            @*<a id="one" href=""><span class="fa fa-star-o"></span></a>
+                                            <a id="two" href="" ><span class="fa fa-star-o"></span></a>
+                                            <a id="three" href="#"><span class="fa fa-star-o"></span></a>
+                                            <a id="four" href="#"><span class="fa fa-star-o"></span></a>
+                                            <a id="five" href="#"><span class="fa fa-star-o"></span></a>*@
+                                            <input type="number" name="rate" min="1" max="5" maxlength="1" value="1"/>
+                                        
+                                        </div>
+                                        <!-- review form -->
+                                    
+                                            <div class="form-group">
+                                                <label for="message">Your Review</label>
+                                                <textarea class="form-control" rows="3" name="message"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">Name</label>
+                                                <input type="text" class="form-control" name="name" placeholder="Name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input type="email" class="form-control" name="email" placeholder="example@gmail.com">
+                                            </div>
+
+                                            <button type="submit" class="btn btn-default aa-review-submit">Submit</button>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <label>Please login to Add your important Review about product.</label>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br /><br />
+                    <!-- Related product -->
+                    <div class="aa-product-related-item">
+                        <h3>Related Products</h3>
+                        <ul class="aa-product-catg aa-related-item-slider">
+                            <!-- start single product item -->
+
+                            <!-- start single product item -->
+                            @foreach (var item in (List<Khareedo.Models.Product>)@ViewBag.RelatedProducts)
+                                    {
+                                        { Html.RenderPartial("_Product", item); }
+                                    }
+                            <!-- end start single product item -->                 
+                           
+                        </ul>                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / product category -->
