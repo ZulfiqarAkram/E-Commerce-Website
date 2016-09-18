@@ -1,0 +1,88 @@
+﻿@model IEnumerable<IMS_Project.Models.Customer>
+
+@{
+    ViewBag.Title = "Customer";
+}
+
+<div>
+   
+    <a href="@Url.Action("Create","Customer")" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>  
+</div>
+<br />
+<div class="row">
+
+    <table class="table table-hover table-bordered table-striped">
+  <tr>
+      <th>
+          @Html.DisplayNameFor(model => model.CustomerID)
+      </th>
+    <th>
+        @Html.DisplayNameFor(model => model.First_Name)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.Last_Name)
+    </th>    
+    <th>
+        @Html.DisplayNameFor(model => model.Age)
+    </th> 
+    <th>
+        @Html.DisplayNameFor(model => model.Country)
+    </th>  
+    <th>
+        @Html.DisplayNameFor(model => model.Email)
+    </th>   
+      
+    <th>
+        @Html.DisplayNameFor(model => model.Mobile1)
+    </th>   
+   
+    <th></th>
+</tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.First_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Last_Name)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>        
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>       
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile1)
+        </td>       
+    
+        
+        <td>
+            <a class="btn btn-sm btn-primary" href="@Url.Action("Edit", "Customer", new { id = item.CustomerID })" aria-label="Edit" data-toggle="tooltip" data-placement="top" title="Edit">
+                <i class="fa fa-edit" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-sm btn-info" href="@Url.Action("Details", "Customer", new { id = item.CustomerID })" aria-label="Details" data-toggle="tooltip" data-placement="top" title="View Details">
+                <i class="fa fa-info" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-sm btn-danger" href="@Url.Action("Delete", "Customer", new { id = item.CustomerID })" aria-label="Delete" data-toggle="tooltip" data-placement="top" title="Delete">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </a>
+        </td>
+    </tr>
+
+}
+
+    </table>
+</div>

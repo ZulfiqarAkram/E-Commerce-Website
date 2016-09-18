@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="IMS-Project1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Zulfiqar\ Akram\\Documents\\Visual\ Studio\ 2013\\Projects\\IMS-Project\\IMS-Project\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Zulfiqar\ Akram\\Documents\\Visual\ Studio\ 2013\\Projects\\IMS-Project\\IMS-Project\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="IMS_Entities-Web.config Connection String" description="" value="metadata=res://*/Models.IMSDataModel.csdl|res://*/Models.IMSDataModel.ssdl|res://*/Models.IMSDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=.;Initial Catalog=IMS;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Zulfiqar\ Akram\\Documents\\Visual\ Studio\ 2013\\Projects\\IMS-Project\\IMS-Project\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='IMS_Entities']/@connectionString" />
+  </parameter>
+</parameters>

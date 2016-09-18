@@ -1,0 +1,88 @@
+﻿@model IEnumerable<IMS_Project.Models.Supplier>
+
+@{
+    ViewBag.Title = "Supplier";
+}
+
+<div >
+   
+    <a href="@Url.Action("Create", "Supplier")" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>  
+</div>
+<br /><br />
+<div class="table-responsive ">
+    <table class="table table-condensed table-hover table-bordered table-striped table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SupplierID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>            
+            
+            <th></th>
+        </tr>
+        @if (Model!=null)
+    {
+
+        foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SupplierID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mobile)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                
+                <td>
+                    <a class="btn btn-sm btn-primary" href="@Url.Action("Edit", "Supplier", new { id = item.SupplierID })" aria-label="Edit">
+                        <i class="fa fa-edit" aria-hidden="true"></i>
+                    </a>
+                    <a class="btn btn-sm btn-info" href="@Url.Action("Details", "Supplier", new { id = item.SupplierID })" aria-label="Details">
+                        <i class="fa fa-info" aria-hidden="true"></i>
+                    </a>
+                    <a class="btn btn-sm btn-danger" href="@Url.Action("Delete", "Supplier", new { id = item.SupplierID })" aria-label="Delete">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+
+    </table>
+</div>

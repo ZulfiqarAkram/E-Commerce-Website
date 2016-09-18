@@ -1,0 +1,139 @@
+﻿@model IMS_Project.Models.Employee
+
+@{
+    ViewBag.Title = "Employee";
+    ViewBag.SubTitle = "Delete";
+}
+
+<h3>Are you sure you want to delete this?</h3>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <dl class="dl-horizontal ">
+            <dt>
+                @Html.DisplayNameFor(model => model.EmpID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EmpID)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Age)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DateofBirth)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateofBirth)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Mobile)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Mobile)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Role.RoleName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Role.RoleName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Login.UserName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Login.UserName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Login.Password)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Login.Password)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Login.isActive)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Login.isActive)
+            </dd>
+
+        </dl>
+    </div>
+    <div class="col-md-4">
+        <div>
+            <img src="~/Content/Images/ProfileImage.svg" alt="" class="img-thumbnail" width="160" height="160" />
+        </div>
+    </div>
+</div> 
+    @using (Html.BeginForm("Delete", "Employee", new { id=@Model.EmpID}, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">            
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "" })
+            <input type="submit" value="Delete" class="btn btn-danger col-md-offset-1" /> 
+        </div>
+    }
+

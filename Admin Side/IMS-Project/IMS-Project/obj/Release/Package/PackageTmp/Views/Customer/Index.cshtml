@@ -1,0 +1,76 @@
+﻿@model IEnumerable<IMS_Project.Models.Customer>
+
+@{
+    ViewBag.Title = "Customer";
+}
+
+<div >
+   
+    <a href="@Url.Action("Create","Customer")" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>  
+</div>
+<br /><br />
+<div class="table-responsive ">
+    <table class="table table-condensed table-hover table-bordered table-striped table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerType.TypeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddedBy)
+            </th>            
+            
+            <th></th>
+        </tr>
+        @if (Model!=null)
+    {
+
+        foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerType.TypeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mobile)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee.FirstName)
+                </td>              
+                
+                <td>
+                    <a class="btn btn-sm btn-primary" href="@Url.Action("Edit", "Customer", new { id = item.CustomerID })" aria-label="Edit">
+                        <i class="fa fa-edit" aria-hidden="true"></i>
+                    </a>
+                    <a class="btn btn-sm btn-info" href="@Url.Action("Details", "Customer", new { id = item.CustomerID })" aria-label="Details">
+                        <i class="fa fa-info" aria-hidden="true"></i>
+                    </a>
+                    <a class="btn btn-sm btn-danger" href="@Url.Action("Delete", "Customer", new { id = item.CustomerID })" aria-label="Delete">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    }
+
+    </table>
+</div>

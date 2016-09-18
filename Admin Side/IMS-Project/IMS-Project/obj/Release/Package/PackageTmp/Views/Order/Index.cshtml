@@ -1,0 +1,90 @@
+﻿@model IEnumerable<IMS_Project.Models.Product>
+@{
+    ViewBag.Title = "Order";
+}
+
+<script src="~/Scripts/jquery-2.0.0.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
+<link href="~/Content/jquery.ui.autocomplete.css" rel="stylesheet" />
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#searchproducts").autocomplete({
+            source: '@Url.Action("GetAllProducts")'
+        });
+    });
+</script>
+
+
+<div class="row" >
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            @using (Html.BeginForm())
+            {
+
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="sr-only" for="form-group-input">search product</label>                              
+                                @Html.TextBox("product",null, new { @class = "form-control" ,id="searchproducts"} )
+                              
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group col-md-8">
+                                <label class="sr-only" for="form-group-input">enter quantity</label>
+                                <input type="number" class="form-control" id="form-group-input" placeholder="quantity">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="submit" value="Add" class="btn btn-success btn-block" />
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+
+
+
+            }
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="table-responsive ">
+                        <table class="table table-condensed table-hover table-bordered table-striped table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Product Name</th>
+                                    <th>Quantity</th>
+                                    <th>Unit Price</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="well well-lg">
+                        <div class="row">
+                            <h3>Amount : 40,200</h3>
+                        </div>
+                        <div class="row">
+                            <h4>Discount : 1,200</h4>
+                        </div>
+                        <hr /><hr />
+                        <div class="row text-success">
+                            <h3>T. Amount : 39,000</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,104 @@
+﻿@model IEnumerable<IMS_Project.Models.Product>
+
+@{
+    ViewBag.Title = "Product";
+}
+
+<div >
+   
+    <a href="@Url.Action("Create", "Product")" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>  
+</div>
+<br /><br />
+<div id="product" class="table-responsive ">
+    <table class="table table-condensed table-hover table-bordered table-striped table">
+        <tr>
+    <th>
+        @Html.DisplayNameFor(model => model.Name)
+    </th>
+    
+    <th>
+        @Html.DisplayNameFor(model => model.UnitPrice)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.OldPrice)
+    </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubCategory.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supplier.CompanyName)
+            </th>
+    
+    <th>
+        @Html.DisplayNameFor(model => model.Discount)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.UnitInStock)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.UnitOnOrder)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.ProductAvailable)
+    </th>    
+    
+    <th></th>
+</tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OldPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubCategory.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Supplier.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Discount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitInStock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitOnOrder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductAvailable)
+        </td>
+        
+        
+       
+        <td>
+            <a class="btn btn-sm btn-primary" href="@Url.Action("Edit", "Product", new { id = item.ProductID })" aria-label="Edit">
+                <i class="fa fa-edit" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-sm btn-info" href="@Url.Action("Details", "Product", new { id = item.ProductID })" aria-label="Details">
+                <i class="fa fa-info" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-sm btn-danger" href="@Url.Action("Delete", "Product", new { id = item.ProductID })" aria-label="Delete">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </a>
+        </td>
+    </tr>
+}
+    
+
+    </table>
+</div>

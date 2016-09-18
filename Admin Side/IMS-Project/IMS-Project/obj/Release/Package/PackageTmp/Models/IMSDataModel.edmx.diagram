@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f4f6d74b7cdf48f897a2618b844fbad0" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="IMS_Models.Category" Width="1.5" PointX="16.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMS_Models.Customer" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMS_Models.CustomerType" Width="1.5" PointX="5.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMS_Models.Employee" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMS_Models.Login" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMS_Models.Order" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMS_Models.OrderDetail" Width="1.5" PointX="9.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMS_Models.Payment" Width="1.5" PointX="13" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMS_Models.PaymentType" Width="1.5" PointX="16.125" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMS_Models.Product" Width="1.5" PointX="13.125" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMS_Models.Role" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMS_Models.Supplier" Width="1.5" PointX="10.125" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMS_Models.sysdiagram" Width="1.5" PointX="17.5" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="IMS_Models.FK_Products_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="IMS_Models.FK_Customers_CustomerTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="IMS_Models.FK_Customers_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="IMS_Models.FK_Order_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="IMS_Models.FK_Employee_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="IMS_Models.FK_Login_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="IMS_Models.FK_Order_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="IMS_Models.FK_OrderDetails_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="IMS_Models.FK_OrderDetails_Payment" ManuallyRouted="false" />
+        <AssociationConnector Association="IMS_Models.FK_OrderDetails_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="IMS_Models.FK_Payment_PaymentType" ManuallyRouted="false" />
+        <AssociationConnector Association="IMS_Models.FK_Products_Suppliers" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

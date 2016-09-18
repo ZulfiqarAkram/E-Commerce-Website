@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IMS_Entities-Web.config Connection String" description="IMS_Entities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.IMSDataModel.csdl|res://*/Models.IMSDataModel.ssdl|res://*/Models.IMSDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.;initial catalog=IMS;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Zulfiqar\ Akram\\Documents\\Visual\ Studio\ 2013\\Projects\\IMS-Project\\IMS-Project\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='IMS_Entities']/@connectionString" />
+  </parameter>
+</parameters>

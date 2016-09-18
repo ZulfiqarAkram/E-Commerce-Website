@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fdcb78d3172a441297aa1e34de7536c0" Name="Diagram1" ZoomLevel="57">
+        <EntityTypeShape EntityType="Models.Category" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Customer" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.genMainSlider" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.genPromoRight" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.OrderDetail" Width="1.5" PointX="7.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Payment" Width="1.5" PointX="3" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.PaymentType" Width="1.5" PointX="0.75" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Product" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Review" Width="1.5" PointX="10.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Role" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.ShippingDetail" Width="1.5" PointX="3" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.SubCategory" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Supplier" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.sysdiagram" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Wishlist" Width="1.5" PointX="7.5" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="Models.FK_Products_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_SubCategory_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Review_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Wishlist_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_OrderDetails_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Payment_PaymentType" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Products_SubCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Products_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Review_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Wishlist_Products" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Models.admin_Employee" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Models.admin_Login" Width="1.5" PointX="14.625" PointY="1.875" />
+        <AssociationConnector Association="Models.FK_admin_Login_admin_Employee" />
+        <AssociationConnector Association="Models.FK_admin_Login_Roles" />
+        <EntityTypeShape EntityType="Models.Order" Width="1.5" PointX="7.5" PointY="14.625" />
+        <AssociationConnector Association="Models.FK_Order_Customers" />
+        <AssociationConnector Association="Models.FK_Order_Payment" />
+        <AssociationConnector Association="Models.FK_Order_ShippingDetails" />
+        <AssociationConnector Association="Models.FK_OrderDetails_Order" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
