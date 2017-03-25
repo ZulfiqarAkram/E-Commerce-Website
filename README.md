@@ -5,6 +5,6 @@ This is generalize project you can customize as per your requirements.  Basicall
 It is complete project for sellers to sell your products through online and also advertise using this project.
 
 Here is the Demo of Project. 
-http://youtube.com/
+https://www.youtube.com/watch?v=UAXuFtYy6-0
 
 Thank you
